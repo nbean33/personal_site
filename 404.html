@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page not found — Noah Bean</title>
-  <meta name="robots" content="noindex" />
-  <link rel="stylesheet" href="/style.css" />
-  <style>
-    .not-found { padding: 80px 20px; }
-    .not-found h1 { font-size: 2rem; margin-bottom: 8px; }
-    .not-found p { color: #666; }
-    .not-found a { display: inline-block; margin-top: 16px; }
-    @media (prefers-color-scheme: dark) {
-      .not-found p { color: #bdbdbd; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0D14">
+<title>Page not found | Noah Bean</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/personal_site/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{ --void:#0A0D14; --line:#1D2431; --acid:#4ADE80; --text:#E7EBF3; --muted:#8A96AB; --mono:"JetBrains Mono", ui-monospace, monospace; }
+*{ box-sizing:border-box; margin:0; }
+body{ min-height:100vh; display:grid; place-items:center; padding:24px 16px; background:var(--void); color:var(--text); font:400 1rem/1.6 Inter, system-ui, sans-serif; }
+main{ max-width:40ch; }
+.code{ font:700 12px/1 var(--mono); letter-spacing:.28em; color:var(--acid); margin-bottom:18px; }
+h1{ font-size:clamp(2rem,7vw,3rem); font-weight:800; letter-spacing:-.03em; line-height:1.1; margin-bottom:14px; }
+p{ color:var(--muted); }
+a{ display:inline-block; margin-top:30px; padding:14px 22px; font:500 11px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--text); border:1px solid var(--line); transition:.2s; }
+a:hover{ border-color:var(--acid); color:var(--acid); }
+</style>
 </head>
 <body>
-  <main class="not-found">
-    <h1>404 — Page not found</h1>
-    <p>The page you’re looking for doesn’t exist or has moved.</p>
-    <a class="btn btn-primary" href="/">Go to homepage</a>
-  </main>
+<main>
+  <p class="code">ERROR 404</p>
+  <h1>Page not found</h1>
+  <p>The page you&rsquo;re looking for doesn&rsquo;t exist or has moved.</p>
+  <a href="/personal_site/">Back to homepage</a>
+</main>
 </body>
 </html>

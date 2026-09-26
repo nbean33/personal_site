@@ -5,17 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0A0D14">
 <title>Noah Bean | Embedded Systems Engineer in Houston, TX</title>
-<meta name="description" content="Embedded Systems Engineer in Houston, TX open to Electrical, Embedded Systems, and Firmware Engineer roles. Experience in PCB design, firmware, RTOS, embedded Linux, and hardware validation. US citizen, authorized to work without sponsorship.">
+<meta name="description" content="Noah Bean is an Embedded Systems Engineer at Langmuir Systems in Houston, TX, working on PCB design, embedded firmware, and hardware testing and validation. Previously at Collins Aerospace and Intel.">
 <!-- Open Graph -->
 <meta property="og:title" content="Noah Bean | Embedded Systems Engineer in Houston, TX">
-<meta property="og:description" content="Open to Electrical, Embedded Systems, and Firmware Engineer roles in Houston, TX | PCB Design & Firmware Development">
+<meta property="og:description" content="Embedded Systems Engineer at Langmuir Systems | PCB design, embedded firmware, and hardware validation">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://noahbean33.github.io/">
+<meta property="og:url" content="https://nbean33.github.io/personal_site/">
+<meta property="og:image" content="https://nbean33.github.io/personal_site/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Noah Bean, Embedded Systems Engineer">
 <!-- Twitter -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Noah Bean | Embedded Systems Engineer in Houston, TX">
-<meta name="twitter:description" content="Open to Electrical, Embedded Systems, and Firmware Engineer roles in Houston, TX | PCB Design & Firmware Development">
+<meta name="twitter:description" content="Embedded Systems Engineer at Langmuir Systems | PCB design, embedded firmware, and hardware validation">
+<meta name="twitter:image" content="https://nbean33.github.io/personal_site/og-image.png">
 
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -176,12 +184,6 @@ p{ margin:0; }
   max-width:58ch; color:var(--muted); font-size:clamp(1rem,2.2vw,1.18rem);
 }
 .hero .lede em{ color:var(--text); font-style:normal; font-weight:500; }
-.avail{
-  margin-top:30px; padding:16px 20px; max-width:60ch;
-  font-size:.95rem; color:var(--muted);
-}
-.avail strong{ color:var(--text); font-weight:600; display:block; margin-bottom:4px; }
-
 .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
 .btn{
   font:500 11px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase;
@@ -213,18 +215,6 @@ p{ margin:0; }
 .field-cap strong{ color:var(--text); font-weight:600; }
 
 /* ============================================================
-   STAT COUNTERS
-   ============================================================ */
-.stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; position:relative; z-index:1; }
-.stat{ padding:26px 24px 22px; }
-.stat .num{
-  font-size:clamp(2.4rem,6vw,3.6rem); font-weight:800; letter-spacing:-.04em; line-height:1;
-  font-variant-numeric:tabular-nums;
-}
-.stat .num .suf{ color:var(--acid); }
-.stat .lbl{ margin-top:12px; font:400 11px/1.5 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
-
-/* ============================================================
    SECTIONS
    ============================================================ */
 section{ position:relative; z-index:1; }
@@ -252,6 +242,13 @@ section{ position:relative; z-index:1; }
 }
 .toolbox tbody td{ color:var(--muted); }
 .toolbox tbody tr{ border-top:1px solid var(--line); }
+@media (max-width:640px){
+  .toolbox thead{ display:none; }
+  .toolbox tbody tr:first-child{ border-top:0; }
+  .toolbox tbody th,.toolbox tbody td{ display:block; width:auto; white-space:normal; }
+  .toolbox tbody th{ padding-bottom:6px; }
+  .toolbox tbody td{ padding-top:0; }
+}
 
 /* record / timeline */
 .entry{ border-top:1px solid var(--line); padding:34px 0; }
@@ -286,6 +283,15 @@ section{ position:relative; z-index:1; }
 .readout .foot b{ color:var(--acid); font-weight:600; }
 .build .more{ margin-top:18px; font:500 11px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase; color:var(--acid); text-decoration:none; }
 .build .more:hover{ text-decoration:underline; text-underline-offset:5px; }
+
+/* writing */
+.posts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+.post{ padding:24px 24px 22px; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:border-color .2s; }
+.post:hover{ border-color:var(--acid); }
+.post .kind{ margin-bottom:12px; }
+.post h3{ font-size:1.08rem; line-height:1.35; margin-bottom:18px; }
+.post:hover h3{ color:var(--acid); }
+.post .when{ margin-top:auto; font:400 11px/1 var(--mono); letter-spacing:.14em; color:var(--muted-lo); }
 
 /* contact */
 .contact{ padding:clamp(48px,9vh,84px) 30px; text-align:center; }
@@ -324,6 +330,7 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
       <li><a class="link" href="#toolbox">Skills</a></li>
       <li><a class="link" href="#record">Experience</a></li>
       <li><a class="link" href="#built">Projects</a></li>
+      <li><a class="link" href="#writing">Writing</a></li>
       <li><a class="link" href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -338,16 +345,11 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
     <h1 class="rise">Noah Bean</h1>
     <p class="lede rise">I work at the hardware-software boundary of embedded systems, with experience in <em>hardware testing and validation</em>, <em>board bring-up</em>, and <em>device driver development</em>.</p>
 
-    <div class="panel avail rise">
-      <strong>Open to Electrical Engineer, Embedded Systems Engineer, and Firmware Engineer opportunities in Houston, TX.</strong>
-      Experience in embedded systems, firmware, and PCB design.
-    </div>
-
     <div class="cta-row rise">
       <a class="btn solid" href="noah_bean_resume.pdf" aria-label="Download Resume">Download Resume</a>
       <a class="btn" href="https://substack.com/@noahbean33" target="_blank" rel="noopener noreferrer" aria-label="Substack profile">Substack</a>
       <a class="btn" href="https://medium.com/@noahbean3396" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">Medium</a>
-      <a class="btn" href="https://github.com/noahbean33" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+      <a class="btn" href="https://github.com/nbean33" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/noah-bean-343612160/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
     </div>
 
@@ -370,16 +372,6 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
   </div>
 </section>
 
-<!-- ========================= STATS ========================= -->
-<section class="wrap" aria-label="Key numbers">
-  <div class="stats">
-    <div class="panel stat rise"><div class="num" data-target="30" data-suffix="%">0</div><div class="lbl">Cut in manual<br>failure-analysis time</div></div>
-    <div class="panel stat rise"><div class="num" data-target="8" data-suffix="">0</div><div class="lbl">Protocols &amp;<br>interfaces used</div></div>
-    <div class="panel stat rise"><div class="num" data-target="6" data-suffix="">0</div><div class="lbl">Languages &amp;<br>HDLs used</div></div>
-    <div class="panel stat rise"><div class="num" data-target="4" data-suffix="">0</div><div class="lbl">Roles across industry,<br>aerospace &amp; semiconductors</div></div>
-  </div>
-</section>
-
 <!-- ========================= ABOUT ========================= -->
 <section class="sec" id="about">
   <div class="wrap">
@@ -390,12 +382,12 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
     <div class="story rise">
       <article>
         <h3>Background</h3>
-        <p>I started at Intel Corporation, performing root-cause analysis on signal integrity failures in server-grade CPUs, GPUs, and DDR5 memory subsystems.</p>
-        <p>At Collins Aerospace, I moved into hardware validation and test automation for avionics systems, including digital signal processing work for real-time sensor data.</p>
+        <p>I started at Intel Corporation, performing root-cause failure analysis on server and GPU hardware returns and isolating faults down to the die or interconnect level.</p>
+        <p>At Collins Aerospace, I designed and ran test procedures for real-time signal and image processing systems, and characterized RF/FPGA radar performance through lab, field, and flight testing.</p>
       </article>
       <article>
         <h3>Current focus</h3>
-        <p>I am currently an Embedded Systems Engineer at Langmuir Systems, where I design PCBs and develop firmware for CNC and laser control systems.</p>
+        <p>I am currently an Embedded Systems Engineer at Langmuir Systems, where I design PCBs and wiring harnesses, develop firmware for CNC controllers, and work with mechanical and software teams to integrate electrical systems into CNC machinery.</p>
         <p>I also do freelance firmware work, including bare-metal and RTOS development and custom embedded Linux BSPs. I hold a B.S. in Electrical and Computer Engineering from Oregon State University.</p>
       </article>
     </div>
@@ -416,11 +408,13 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
         </thead>
         <tbody>
           <tr><th scope="row">Languages &amp; Low-Level</th><td>C, Embedded C, C++, Python, Assembly (ARM, RISC-V, x86), SystemVerilog</td></tr>
-          <tr><th scope="row">Microcontrollers &amp; RTOS</th><td>STM32, ESP32, ARM Cortex-M, FreeRTOS, Zephyr, Bare-Metal, CMSIS, interrupt-driven drivers, power management, bootloaders, DSP, MISRA, Agile</td></tr>
+          <tr><th scope="row">Microcontrollers &amp; RTOS</th><td>STM32, ESP32, ARM Cortex-M, FreeRTOS, Zephyr, Bare-Metal, CMSIS, interrupt-driven drivers, power management, bootloaders, DSP</td></tr>
           <tr><th scope="row">Embedded Linux &amp; BSPs</th><td>Buildroot, U-Boot, Yocto/BitBake, Linux Kernel, device drivers, systemd</td></tr>
           <tr><th scope="row">Protocols &amp; Interfaces</th><td>UART, SPI, I2C, CAN, Modbus, MQTT, BLE, TCP/IP</td></tr>
           <tr><th scope="row">Hardware Validation &amp; Debug</th><td>Oscilloscopes, logic analyzers, JTAG/SWD, protocol analyzers, GPIB/VISA, TDR, unit/regression testing, test automation, static analysis</td></tr>
-          <tr><th scope="row">PCB Design &amp; Tools</th><td>KiCad, Altium, LTSpice, Autodesk Fusion 360, STM32CubeIDE, ESP-IDF, Xilinx Vivado, GCC, CMake, Git, TDD, OOP</td></tr>
+          <tr><th scope="row">PCB Design &amp; Tools</th><td>KiCad, Altium, LTSpice, Autodesk Fusion 360, STM32CubeIDE, ESP-IDF, Xilinx Vivado, GCC, CMake, Git</td></tr>
+          <tr><th scope="row">Practices &amp; Standards</th><td>MISRA C, test-driven development, object-oriented design, Agile</td></tr>
+          <tr><th scope="row">Data Science &amp; Machine Learning</th><td>Python, NumPy, pandas, SciPy, scikit-learn, PyTorch, Matplotlib, Jupyter, SQL, R, statistical analysis, regression, data visualization</td></tr>
         </tbody>
       </table>
     </div>
@@ -439,10 +433,12 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
         <span class="when">JUL 2026 - PRESENT</span>
       </div>
       <ul>
-        <li>Designed, laid out, and assembled <b>PCBs and wiring harnesses</b> for CNC control systems and power distribution.</li>
-        <li>Developed and maintained embedded firmware for CNC controllers and related hardware.</li>
-        <li>Conducted bench testing and troubleshooting of electronic components for hardware reliability and performance.</li>
-        <li>Created and maintained schematics, BOMs, and assembly guides for production, collaborating with mechanical and software teams.</li>
+        <li><b>Circuit Design &amp; Prototyping:</b> Designed, laid out, and assembled PCBs and wiring harnesses for CNC control systems and power distribution.</li>
+        <li><b>Testing &amp; Validation:</b> Conducted hands-on bench testing and troubleshooting of electronic components to ensure hardware reliability and performance.</li>
+        <li><b>Firmware Development:</b> Developed and maintained embedded firmware for CNC controllers and related hardware.</li>
+        <li><b>Software Development:</b> Tested and developed software programs, including firmware.</li>
+        <li><b>Technical Documentation:</b> Created and maintained schematics, BOMs, and assembly guides for production.</li>
+        <li><b>Cross-Functional Collaboration:</b> Collaborated with mechanical and software teams to integrate electrical systems into new and existing CNC machinery.</li>
       </ul>
     </article>
 
@@ -459,13 +455,13 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
 
     <article class="entry rise">
       <div class="entry-head">
-        <h3>Collins Aerospace</h3><span class="role">Systems &amp; Electrical Engineering Intern · Wilsonville, OR</span>
+        <h3>Collins Aerospace</h3><span class="role">System Engineering Intern · Wilsonville, OR</span>
         <span class="when">JUN 2025 - DEC 2025</span>
       </div>
       <ul>
-        <li>Conducted functional and electrical verification on <b>avionics units</b> using lab instrumentation, including oscilloscopes and power supplies.</li>
-        <li>Developed automated test scripts that increased test throughput and improved detection of intermittent hardware faults.</li>
-        <li>Implemented and verified digital signal processing algorithms for real-time sensor data acquisition, validating signal conditioning across the hardware signal path.</li>
+        <li><b>Hardware Testing:</b> Designed and executed test procedures for real-time signal and image processing systems, applying electromagnetics and RF hardware principles to validate performance against aerospace/defense requirements.</li>
+        <li><b>Data Analysis:</b> Developed data collection, analysis, and visualization techniques to characterize RF/FPGA embedded system performance, translating raw test data into actionable recommendations for design iteration.</li>
+        <li><b>Systems Engineering:</b> Evaluated proposed hardware and software modifications to RF radar systems through lab, field, and flight testing, informing engineering decisions on system-level improvements for infrared &ldquo;see-through&rdquo; imaging in low-visibility flight conditions.</li>
       </ul>
     </article>
 
@@ -475,8 +471,9 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
         <span class="when">APR 2024 - SEP 2024</span>
       </div>
       <ul>
-        <li>Conducted root-cause electrical analysis on server-grade <b>CPUs, GPUs, and DDR5</b> memory subsystems using oscilloscopes, logic analyzers, and multimeters.</li>
-        <li>Engineered Python-based frameworks, incorporating machine learning, to automate extraction and correlation of on-chip telemetry and fault logs, cutting manual failure-analysis time by <b>30%</b>.</li>
+        <li><b>Failure Analysis:</b> Conducted root-cause failure analysis on server and GPU hardware returns, using systematic fault isolation techniques to identify defect mechanisms and distinguish design flaws from manufacturing or field-use failures.</li>
+        <li><b>Hardware Testing:</b> Performed electrical and physical diagnostics (continuity, curve tracing, decapsulation, microscopy) on failed components to localize faults down to the die or interconnect level, supporting corrective action decisions.</li>
+        <li><b>Data Analysis:</b> Documented and tracked failure trends across FA case data, correlating recurring failure signatures to inform yield improvement and product reliability efforts.</li>
       </ul>
     </article>
 
@@ -528,7 +525,7 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
           <p class="row"><span>connectivity</span><span>Wi-Fi (AP+STA) · MQTT/TLS · OTA</span></p>
           <p class="foot">cores: <b>dual-core task split</b></p>
         </div>
-        <a class="more" href="https://github.com/noahbean33/weather_station" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+        <a class="more" href="https://github.com/nbean33/weather_station" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
       </article>
 
       <article class="panel build rise">
@@ -549,6 +546,42 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
   </div>
 </section>
 
+<!-- ========================= WRITING ========================= -->
+<section class="sec" id="writing">
+  <div class="wrap">
+    <p class="eyebrow rise">05 / Writing</p>
+    <h2 class="rise">Writing</h2>
+    <p class="sec-note rise">Chapter notes on high-speed digital design, plus commentary on embedded systems and the semiconductor industry.</p>
+
+    <div class="posts">
+      <a class="panel post rise" href="https://noahbean33.substack.com/p/high-speed-digital-design-chapter-44c" target="_blank" rel="noopener noreferrer">
+        <p class="kind tag">Substack · High-Speed Digital Design</p>
+        <h3>Your Bypass Capacitor Is an Inductor for Most of the Band</h3>
+        <span class="when">SEP 2026</span>
+      </a>
+      <a class="panel post rise" href="https://noahbean33.substack.com/p/high-speed-digital-design-chapter-d91" target="_blank" rel="noopener noreferrer">
+        <p class="kind tag">Substack · High-Speed Digital Design</p>
+        <h3>The Ground Plane Stops at the Connector</h3>
+        <span class="when">SEP 2026</span>
+      </a>
+      <a class="panel post rise" href="https://medium.com/@noahbean3396/the-museum-of-embedded-disasters-f21c31116f53" target="_blank" rel="noopener noreferrer">
+        <p class="kind tag">Medium · Embedded Systems</p>
+        <h3>The Museum of Embedded Disasters</h3>
+        <span class="when">AUG 2026</span>
+      </a>
+      <a class="panel post rise" href="https://medium.com/@noahbean3396/alteras-ipo-is-an-ai-pitch-built-on-a-forty-year-old-tradeoff-in-silicon-5f924d7542fd" target="_blank" rel="noopener noreferrer">
+        <p class="kind tag">Medium · Semiconductors</p>
+        <h3>Altera&rsquo;s IPO Is an AI Pitch Built on a Forty-Year-Old Tradeoff in Silicon</h3>
+        <span class="when">SEP 2026</span>
+      </a>
+    </div>
+    <div class="cta-row rise">
+      <a class="btn" href="https://substack.com/@noahbean33" target="_blank" rel="noopener noreferrer">All Substack posts</a>
+      <a class="btn" href="https://medium.com/@noahbean3396" target="_blank" rel="noopener noreferrer">All Medium posts</a>
+    </div>
+  </div>
+</section>
+
 <!-- ========================= CONTACT ========================= -->
 <section class="sec" id="contact">
   <div class="wrap">
@@ -558,7 +591,7 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
       <div class="cta-row">
         <a class="btn solid" href="mailto:noahbean3396@gmail.com">Email me</a>
         <a class="btn" href="https://www.linkedin.com/in/noah-bean-343612160/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/noahbean33" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn" href="https://github.com/nbean33" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </div>
@@ -704,28 +737,7 @@ document.querySelectorAll('.rise').forEach((el, i) => {
 
 
 /* ============================================================
-   3. COUNT-UP NUMBERS
-   ============================================================ */
-const easeOut = t => 1 - Math.pow(1 - t, 3);
-const count = new IntersectionObserver((es, ob) => {
-  es.forEach(e => {
-    if(!e.isIntersecting) return;
-    ob.unobserve(e.target);
-    const el = e.target, end = +el.dataset.target, suf = el.dataset.suffix || '';
-    if(reduced){ el.innerHTML = end + `<span class="suf">${suf}</span>`; return; }
-    const dur = 1400, t0 = performance.now();
-    (function tick(now){
-      const k = Math.min(1, (now - t0) / dur);
-      el.innerHTML = Math.round(end * easeOut(k)) + `<span class="suf">${suf}</span>`;
-      if(k < 1) requestAnimationFrame(tick);
-    })(t0);
-  });
-}, { threshold:0.5 });
-document.querySelectorAll('[data-target]').forEach(el => count.observe(el));
-
-
-/* ============================================================
-   4. NAV: hairline on scroll + active section
+   3. NAV: hairline on scroll + active section
    ============================================================ */
 const nav = document.getElementById('nav');
 addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 20), { passive:true });
@@ -747,7 +759,7 @@ const spy = new IntersectionObserver(es => {
     links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
   });
 }, { rootMargin:'-45% 0px -50% 0px' });
-['about','toolbox','record','built','contact'].forEach(id => {
+['about','toolbox','record','built','writing','contact'].forEach(id => {
   const s = document.getElementById(id); if(s) spy.observe(s);
 });
 </script>
