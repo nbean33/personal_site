@@ -184,6 +184,19 @@ p{ margin:0; }
   max-width:58ch; color:var(--muted); font-size:clamp(1rem,2.2vw,1.18rem);
 }
 .hero .lede em{ color:var(--text); font-style:normal; font-weight:500; }
+.avail{ margin-top:30px; padding:16px 20px; max-width:60ch; }
+.avail p{ color:var(--muted); font-size:.95rem; }
+.avail .avail-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:4px;
+  font:600 11px/1.4 var(--mono); letter-spacing:.2em; text-transform:uppercase; color:var(--acid);
+}
+.avail .dot{ width:8px; height:8px; border-radius:50%; background:var(--acid); box-shadow:0 0 0 0 rgba(74,222,128,.6); animation:pulse 2.4s infinite; }
+@keyframes pulse{
+  0%{ box-shadow:0 0 0 0 rgba(74,222,128,.55); }
+  70%{ box-shadow:0 0 0 9px rgba(74,222,128,0); }
+  100%{ box-shadow:0 0 0 0 rgba(74,222,128,0); }
+}
+
 .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
 .btn{
   font:500 11px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase;
@@ -285,13 +298,14 @@ section{ position:relative; z-index:1; }
 .build .more:hover{ text-decoration:underline; text-underline-offset:5px; }
 
 /* writing */
-.posts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
-.post{ padding:24px 24px 22px; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:border-color .2s; }
-.post:hover{ border-color:var(--acid); }
-.post .kind{ margin-bottom:12px; }
-.post h3{ font-size:1.08rem; line-height:1.35; margin-bottom:18px; }
-.post:hover h3{ color:var(--acid); }
-.post .when{ margin-top:auto; font:400 11px/1 var(--mono); letter-spacing:.14em; color:var(--muted-lo); }
+.outlets{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+.outlet{ padding:28px 26px; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:border-color .2s; }
+.outlet:hover{ border-color:var(--acid); }
+.outlet .kind{ margin-bottom:14px; }
+.outlet h3{ font-size:1.3rem; margin-bottom:10px; }
+.outlet > p:not(.kind){ color:var(--muted); font-size:.93rem; margin-bottom:22px; }
+.outlet .more{ margin-top:auto; font:500 11px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase; color:var(--acid); }
+.outlet:hover .more{ text-decoration:underline; text-underline-offset:5px; }
 
 /* contact */
 .contact{ padding:clamp(48px,9vh,84px) 30px; text-align:center; }
@@ -344,6 +358,11 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
   <div class="wrap">
     <h1 class="rise">Noah Bean</h1>
     <p class="lede rise">I work at the hardware-software boundary of embedded systems, with experience in <em>hardware testing and validation</em>, <em>board bring-up</em>, and <em>device driver development</em>.</p>
+
+    <div class="panel avail rise">
+      <p class="avail-head"><span class="dot" aria-hidden="true"></span>Open to opportunities</p>
+      <p>Interested in embedded systems, firmware, and hardware engineering roles in Houston, TX.</p>
+    </div>
 
     <div class="cta-row rise">
       <a class="btn solid" href="noah_bean_resume.pdf" aria-label="Download Resume">Download Resume</a>
@@ -551,33 +570,21 @@ footer p{ font:400 10px/1.6 var(--mono); letter-spacing:.12em; text-transform:up
   <div class="wrap">
     <p class="eyebrow rise">05 / Writing</p>
     <h2 class="rise">Writing</h2>
-    <p class="sec-note rise">Chapter notes on high-speed digital design, plus commentary on embedded systems and the semiconductor industry.</p>
+    <p class="sec-note rise">I write about high-speed digital design, embedded systems, and the semiconductor industry.</p>
 
-    <div class="posts">
-      <a class="panel post rise" href="https://noahbean33.substack.com/p/high-speed-digital-design-chapter-44c" target="_blank" rel="noopener noreferrer">
-        <p class="kind tag">Substack · High-Speed Digital Design</p>
-        <h3>Your Bypass Capacitor Is an Inductor for Most of the Band</h3>
-        <span class="when">SEP 2026</span>
+    <div class="outlets">
+      <a class="panel outlet rise" href="https://substack.com/@noahbean33" target="_blank" rel="noopener noreferrer">
+        <p class="kind tag">Newsletter</p>
+        <h3>Substack</h3>
+        <p>Hardware and PCB design notes, including a chapter-by-chapter series on high-speed digital design.</p>
+        <span class="more">Read on Substack &rarr;</span>
       </a>
-      <a class="panel post rise" href="https://noahbean33.substack.com/p/high-speed-digital-design-chapter-d91" target="_blank" rel="noopener noreferrer">
-        <p class="kind tag">Substack · High-Speed Digital Design</p>
-        <h3>The Ground Plane Stops at the Connector</h3>
-        <span class="when">SEP 2026</span>
+      <a class="panel outlet rise" href="https://medium.com/@noahbean3396" target="_blank" rel="noopener noreferrer">
+        <p class="kind tag">Articles</p>
+        <h3>Medium</h3>
+        <p>Engineering takes on semiconductor and embedded industry news.</p>
+        <span class="more">Read on Medium &rarr;</span>
       </a>
-      <a class="panel post rise" href="https://medium.com/@noahbean3396/the-museum-of-embedded-disasters-f21c31116f53" target="_blank" rel="noopener noreferrer">
-        <p class="kind tag">Medium · Embedded Systems</p>
-        <h3>The Museum of Embedded Disasters</h3>
-        <span class="when">AUG 2026</span>
-      </a>
-      <a class="panel post rise" href="https://medium.com/@noahbean3396/alteras-ipo-is-an-ai-pitch-built-on-a-forty-year-old-tradeoff-in-silicon-5f924d7542fd" target="_blank" rel="noopener noreferrer">
-        <p class="kind tag">Medium · Semiconductors</p>
-        <h3>Altera&rsquo;s IPO Is an AI Pitch Built on a Forty-Year-Old Tradeoff in Silicon</h3>
-        <span class="when">SEP 2026</span>
-      </a>
-    </div>
-    <div class="cta-row rise">
-      <a class="btn" href="https://substack.com/@noahbean33" target="_blank" rel="noopener noreferrer">All Substack posts</a>
-      <a class="btn" href="https://medium.com/@noahbean3396" target="_blank" rel="noopener noreferrer">All Medium posts</a>
     </div>
   </div>
 </section>
